@@ -7,6 +7,7 @@ describe("User Can Open Login Page", () => {
         cy.get('#username').type("test1");
         cy.get('#password').type("testtest1");
         cy.get('.btn-primary').click();
-        // cy.get('h2').contains("Selamat Datang");
+        cy.get('h2').should("have.text","Selamat Datang , test1");
+        cy.get('.navbar-nav > .nav-item > .nav-link').click();
     })
 });
